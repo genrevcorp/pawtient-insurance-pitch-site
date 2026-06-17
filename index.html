@@ -70,7 +70,7 @@ p,li{text-wrap:pretty}
 .sec-h{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(25px,3.6vw,38px);
   line-height:1.34;letter-spacing:.01em}
 .sec-h em{font-style:normal;color:var(--rose-deep)}
-.lede{color:var(--ink-soft);font-size:clamp(16px,1.7vw,18.5px);max-width:60ch;margin-top:18px}
+.lede{color:var(--ink-soft);font-size:clamp(16px,1.7vw,18.5px);max-width:58ch;margin-top:18px}
 
 /* ---------- hero ---------- */
 .hero{padding-top:clamp(48px,7vw,86px)}
@@ -81,13 +81,7 @@ p,li{text-wrap:pretty}
 .hero h1{font-family:"Fraunces","Noto Serif TC",serif;font-weight:900;
   font-size:clamp(34px,6vw,62px);line-height:1.2;letter-spacing:.005em}
 .hero h1 em{font-style:italic;color:var(--rose-deep)}
-.hero .lede{font-size:clamp(17px,2vw,21px);max-width:36ch;margin-top:24px;line-height:1.7}
-.hero .pilot-note{margin-top:20px;display:inline-flex;align-items:center;gap:10px;
-  font-size:14px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);
-  padding:9px 16px;border-radius:99px;box-shadow:var(--shadow-soft)}
-.hero .pilot-note .dot{width:7px;height:7px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 0 4px var(--green-wash)}
-.hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;
   padding:14px 26px;border-radius:99px;transition:transform .13s var(--ease-out),box-shadow .2s var(--ease-out),background .2s}
 .btn-primary{background:var(--rose-deep);color:var(--surface);box-shadow:0 10px 26px -12px var(--rose-deep)}
@@ -100,8 +94,21 @@ p,li{text-wrap:pretty}
   .btn-ghost:hover{background:var(--rose-wash)}
 }
 
+/* hero TL;DR — the whole pitch in three boxes */
+.tldr{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid var(--rose-line);border-radius:var(--radius);overflow:hidden;
+  background:var(--surface);box-shadow:var(--shadow-soft)}
+.tldr .ti{padding:22px 24px;border-right:1px solid var(--line)}
+.tldr .ti:last-child{border-right:none}
+.tldr .tk{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);font-size:14px}
+.tldr .tt{font-weight:700;font-size:16px;margin-top:9px;color:var(--ink);line-height:1.4}
+.tldr .td{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.65}
+@media(max-width:720px){.tldr{grid-template-columns:1fr}
+  .tldr .ti{border-right:none;border-bottom:1px solid var(--line)}
+  .tldr .ti:last-child{border-bottom:none}}
+
 /* stat strip */
-.statrow{display:flex;flex-wrap:wrap;margin-top:54px;border-block:2.5px double var(--rose-line)}
+.statrow{display:flex;flex-wrap:wrap;margin-top:40px;border-block:2.5px double var(--rose-line)}
 .stat{flex:1 1 150px;padding:22px 24px 20px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:none}
 .stat b{display:block;font-family:"Fraunces",serif;font-weight:900;font-size:clamp(30px,4vw,42px);
@@ -111,22 +118,39 @@ p,li{text-wrap:pretty}
 @media(max-width:680px){.stat{flex-basis:46%;border-bottom:1px solid var(--line)}
   .stat:nth-child(2n){border-right:none}}
 
-/* ---------- problem: tinted band ---------- */
+/* tinted band */
 .band{background:linear-gradient(180deg,var(--surface-2),color-mix(in srgb,var(--surface-2) 40%,var(--paper)));
   border-block:1px solid var(--line)}
-.prob-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:start;margin-top:8px}
-@media(max-width:840px){.prob-grid{grid-template-columns:1fr;gap:40px}}
-.prob-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
-.prob-item{display:flex;gap:18px;padding:22px 4px;border-bottom:1px solid var(--line)}
-.prob-item .ix{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);
-  font-size:19px;line-height:1.5;min-width:30px}
-.prob-item b{display:block;font-size:17px;font-weight:700;margin-bottom:3px}
-.prob-item p{font-size:14.5px;color:var(--ink-soft);line-height:1.7}
-.pullquote{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(19px,2.3vw,25px);
-  line-height:1.6;color:var(--ink);border-left:0;position:relative;padding-left:0}
-.pullquote .mk{font-family:"Fraunces",serif;font-style:italic;color:var(--rose-deep)}
-.pullquote .sub{display:block;font-family:"Noto Sans TC",sans-serif;font-weight:400;font-size:15px;
-  color:var(--ink-soft);margin-top:16px;line-height:1.8}
+
+/* ---------- pilot ---------- */
+.pilot-head{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 36px}
+.chip{font-size:13px;font-weight:600;color:var(--green);background:var(--green-wash);
+  border:1px solid color-mix(in srgb,var(--green) 22%,transparent);border-radius:99px;padding:8px 16px;
+  display:inline-flex;align-items:center;gap:7px}
+.chip svg{width:14px;height:14px}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-soft)}
+@media(max-width:760px){.flow{grid-template-columns:1fr}}
+.fstep{padding:clamp(22px,3vw,32px);border-right:1px solid var(--line);position:relative}
+.fstep:last-child{border-right:none}
+@media(max-width:760px){.fstep{border-right:none;border-bottom:1px solid var(--line)}.fstep:last-child{border-bottom:none}}
+.fstep .fn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);font-size:15px;
+  display:flex;align-items:center;gap:8px}
+.fstep .fn::after{content:"";flex:1;height:1px;background:var(--line)}
+.fstep h4{font-family:"Noto Serif TC",serif;font-weight:700;font-size:18px;margin:13px 0 8px}
+.fstep p{font-size:14px;color:var(--ink-soft);line-height:1.7}
+
+/* ---------- cooperation directions ---------- */
+.dirs{margin-top:14px;border-top:2.5px double var(--rose-line)}
+.dir{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(22px,3vw,38px);align-items:center;
+  padding:clamp(24px,3.4vw,36px) 4px;border-bottom:1px solid var(--line)}
+.dir .dn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);
+  font-size:clamp(26px,3.4vw,40px);line-height:1}
+.dir .dc h3{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(18px,2.1vw,22px)}
+.dir .dc p{font-size:14px;color:var(--ink-soft);margin-top:5px;max-width:54ch}
+.dir .dt{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--ink-faint);white-space:nowrap;
+  border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+@media(max-width:640px){.dir{grid-template-columns:auto 1fr;gap:16px}.dir .dt{display:none}}
 
 /* ---------- what we do: capability rows w/ exhibits ---------- */
 .cap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,68px);align-items:center;
@@ -173,61 +197,17 @@ p,li{text-wrap:pretty}
 .hedge{margin-top:30px;font-size:12.5px;color:var(--ink-faint);line-height:1.7;
   border-top:1px dashed var(--line);padding-top:16px;max-width:56ch}
 
-/* ---------- founder aside ---------- */
-.founder{background:var(--ink);color:#F2E7EC;position:relative;overflow:hidden}
-.founder::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(700px 360px at 92% -20%,color-mix(in srgb,var(--rose) 28%,transparent),transparent 60%);opacity:.5}
-.founder .wrap{position:relative}
-.founder .fkicker{display:inline-flex;align-items:center;gap:11px;color:var(--rose);font-weight:700;
-  font-size:12.5px;letter-spacing:.32em}
-.founder .fkicker::before{content:"";width:30px;height:1px;background:var(--rose);opacity:.7}
-.founder .fstatement{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(22px,3vw,34px);
-  line-height:1.5;max-width:22ch;margin-top:20px}
-.founder .fstatement em{font-family:"Fraunces",serif;font-style:italic;font-weight:900;color:var(--rose)}
-.founder .by{margin-top:26px;font-size:14px;color:#BBA6B0;letter-spacing:.04em;max-width:52ch;line-height:1.8}
-
-/* ---------- cooperation directions ---------- */
-.dirs{margin-top:14px;border-top:2.5px double var(--rose-line)}
-.dir{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(22px,3vw,38px);align-items:center;
-  padding:clamp(24px,3.4vw,36px) 4px;border-bottom:1px solid var(--line)}
-.dir .dn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);
-  font-size:clamp(26px,3.4vw,40px);line-height:1}
-.dir .dc h3{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(18px,2.1vw,22px)}
-.dir .dc p{font-size:14px;color:var(--ink-soft);margin-top:5px;max-width:54ch}
-.dir .dt{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--ink-faint);white-space:nowrap;
-  border:1px solid var(--line);border-radius:99px;padding:5px 12px}
-@media(max-width:640px){.dir{grid-template-columns:auto 1fr;gap:16px}.dir .dt{display:none}}
-
-/* ---------- pilot ---------- */
-.pilot-head{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 36px}
-.chip{font-size:13px;font-weight:600;color:var(--green);background:var(--green-wash);
-  border:1px solid color-mix(in srgb,var(--green) 22%,transparent);border-radius:99px;padding:8px 16px;
-  display:inline-flex;align-items:center;gap:7px}
-.chip svg{width:14px;height:14px}
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);
-  border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-soft)}
-@media(max-width:760px){.flow{grid-template-columns:1fr}}
-.fstep{padding:clamp(22px,3vw,32px);border-right:1px solid var(--line);position:relative}
-.fstep:last-child{border-right:none}
-@media(max-width:760px){.fstep{border-right:none;border-bottom:1px solid var(--line)}.fstep:last-child{border-bottom:none}}
-.fstep .fn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);font-size:15px;
-  display:flex;align-items:center;gap:8px}
-.fstep .fn::after{content:"";flex:1;height:1px;background:var(--line)}
-.fstep h4{font-family:"Noto Serif TC",serif;font-weight:700;font-size:18px;margin:13px 0 8px}
-.fstep p{font-size:14px;color:var(--ink-soft);line-height:1.7}
-
-/* ---------- market ---------- */
-.market{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,64px);align-items:center}
-@media(max-width:820px){.market{grid-template-columns:1fr;gap:36px}}
-.bignum{font-family:"Fraunces",serif;font-weight:900;line-height:.92;color:var(--rose-deep);
-  font-size:clamp(72px,12vw,140px);letter-spacing:-.02em;display:flex;align-items:flex-end;gap:6px}
-@media(min-width:1100px){.market .bignum{margin-left:calc(-1 * clamp(20px,5vw,56px))}}
-.bignum .un{font-size:.26em;font-weight:700;color:var(--ink);margin-bottom:.5em;letter-spacing:0}
-.market .mlabel{font-size:14px;color:var(--ink-soft);letter-spacing:.1em;margin-top:6px}
-.market .mbody{font-size:16px;color:var(--ink-soft);line-height:1.85;max-width:54ch;text-wrap:pretty}
-.market .mbody b{color:var(--ink)}
-.srcnote{margin-top:18px;font-size:12px;color:var(--ink-faint);line-height:1.7;max-width:54ch}
-.srcnote b{color:var(--ink-soft);font-weight:600}
+/* ---------- why now (problem + market + origin, compact) ---------- */
+.why-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,60px);align-items:start;margin-top:26px}
+@media(max-width:840px){.why-grid{grid-template-columns:1fr;gap:34px}}
+.why-grid p{color:var(--ink-soft);font-size:16px;line-height:1.85;max-width:50ch;text-wrap:pretty}
+.why-origin{margin-top:16px;font-size:14.5px;color:var(--ink-faint)}
+.why-origin em{font-family:"Fraunces","Noto Serif TC",serif;font-style:italic;color:var(--rose-deep)}
+.why-stats{border-top:2.5px double var(--rose-line)}
+.why-stat{padding:18px 4px;border-bottom:1px solid var(--line)}
+.why-stat b{display:block;font-family:"Fraunces",serif;font-weight:900;font-size:clamp(26px,3.6vw,38px);
+  color:var(--rose-deep);line-height:1.05;letter-spacing:-.01em}
+.why-stat span{display:block;font-size:13px;color:var(--ink-soft);letter-spacing:.04em;margin-top:5px;line-height:1.55}
 
 /* ---------- CTA ---------- */
 .cta{background:linear-gradient(180deg,var(--rose-wash),color-mix(in srgb,var(--rose-wash) 30%,var(--paper)));
@@ -273,13 +253,30 @@ footer .fmark em{font-style:italic;color:var(--rose-deep)}
 
 <main>
 
-  <!-- HERO -->
+  <!-- HERO + TL;DR -->
   <section class="hero">
     <div class="wrap">
       <div class="eyebrow reveal">PAWTIENT AI　×　寵物保險合作</div>
       <h1 class="reveal d1">把寵物的健康資料，<br>變成<em>看得懂、可追溯</em>的結構化數據。</h1>
-      <p class="lede reveal d2">讓理賠審核更快、更有依據，爭議與誤賠可望降低；同時成為保戶有感的健康管理加值服務。</p>
-      <div class="pilot-note reveal d2"><span class="dot"></span>一個範圍很小、可逆、不需系統整合的試點提案。</div>
+
+      <div class="tldr reveal d2">
+        <div class="ti">
+          <div class="tk">是什麼</div>
+          <div class="tt">AI 自動整理寵物健康資料</div>
+          <div class="td">把血檢報告與診療紀錄，轉成結構化、有時間軸的健康紀錄。</div>
+        </div>
+        <div class="ti">
+          <div class="tk">我們提議</div>
+          <div class="tt">免費 3 個月小型試點</div>
+          <div class="td">一批保戶免費試用，由貴公司觀察理賠審核變化。可逆、不簽長約、不涉系統整合。</div>
+        </div>
+        <div class="ti">
+          <div class="tk">對貴公司</div>
+          <div class="tt">審核更快、爭議可望降低</div>
+          <div class="td">病史完整可追溯，核保理賠更有依據；同時是保戶有感的加值服務。</div>
+        </div>
+      </div>
+
       <div class="hero-cta reveal d3">
         <a class="btn btn-primary" href="#contact">安排 30 分鐘線上會議</a>
         <a class="btn btn-ghost" href="#pilot">先看試點怎麼做</a>
@@ -294,31 +291,46 @@ footer .fmark em{font-style:italic;color:var(--rose-deep)}
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="band">
+  <!-- 01 PILOT — lead with the offer -->
+  <section id="pilot" class="band">
     <div class="wrap">
-      <div class="kicker reveal"><span class="no">01</span>　問題</div>
-      <div class="prob-grid">
-        <div class="reveal d1">
-          <p class="pullquote">理賠審核最耗成本的，往往不是金額，<br>而是<span class="mk">把資料整理清楚</span>這件事。
-            <span class="sub">醫療文件分散、病史時間軸不清楚，核保與理賠人員得花大量人力逐筆比對。慢性病寵物尤其明顯：一隻腎貓的病程可能橫跨數年、數十份檢驗單，散落在不同診所、不同格式的紙本與照片裡。</span>
-          </p>
-        </div>
-        <div class="prob-list reveal d2">
-          <div class="prob-item"><span class="ix">i</span><div><b>文件分散</b><p>檢驗單、處方、收據分屬不同診所，格式不一、難以彙整。</p></div></div>
-          <div class="prob-item"><span class="ix">ii</span><div><b>時間軸斷裂</b><p>「什麼時候生病、吃過什麼藥、指數怎麼變化」缺乏連貫紀錄。</p></div></div>
-          <div class="prob-item"><span class="ix">iii</span><div><b>仰賴人工</b><p>審核高度依賴人力判讀與比對，速度與一致性都受限。</p></div></div>
-        </div>
+      <div class="kicker reveal"><span class="no">01</span>　試點提案</div>
+      <h2 class="sec-h reveal d1">先做一個小而<em>可逆</em>的試點，用貴公司的數據說話。</h2>
+      <p class="lede reveal d2">不簽長約、不涉系統整合，純粹先驗證一件事：結構化的健康資料，能不能讓貴公司的理賠審核更有效率。</p>
+      <div class="pilot-head reveal d2">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>範圍很小</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完全可逆</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不簽長約</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不涉系統整合</span>
+      </div>
+      <div class="flow reveal d2">
+        <div class="fstep"><div class="fn">一</div><h4>提供一批保戶免費使用</h4><p>選定一小群寵物險保戶，免費使用 Pawtient AI 三個月，開始累積結構化健康紀錄。</p></div>
+        <div class="fstep"><div class="fn">二</div><h4>貴公司觀察理賠表現</h4><p>由貴公司在這段期間觀察理賠申請的審核效率與爭議率，是否出現可衡量的變化。</p></div>
+        <div class="fstep"><div class="fn">三</div><h4>用結果決定下一步</h4><p>純粹先驗證數據是否真的對貴公司有幫助，再一起討論要不要、以及如何擴大。</p></div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE DO -->
+  <!-- 02 COOPERATION DIRECTIONS -->
   <section>
     <div class="wrap">
-      <div class="kicker reveal"><span class="no">02</span>　我們做什麼</div>
-      <h2 class="sec-h reveal d1">Pawtient AI 把散落的醫療資料，<br>自動整理成一條清楚的<em>健康時間軸</em>。</h2>
-      <p class="lede reveal d2">飼主不用再手動整理，「這隻寵物何時生病、吃過什麼藥、指數怎麼變化」第一次有了完整、帶時間戳、可匯出的數位軌跡。</p>
+      <div class="kicker reveal"><span class="no">02</span>　合作方向</div>
+      <h2 class="sec-h reveal d1">試點之外，我們還能一起做<em>這四件事</em>。</h2>
+      <div class="dirs reveal d2">
+        <div class="dir"><span class="dn">01</span><div class="dc"><h3>寵物險保戶的健康管理加值服務</h3><p>把 Pawtient AI 作為保單的附加價值，提供給寵物險保戶使用。</p></div><span class="dt">加值服務</span></div>
+        <div class="dir"><span class="dn">02</span><div class="dc"><h3>協助保戶整理病史時間軸</h3><p>血檢、看診、用藥與病程，自動彙整成一條可追溯的紀錄。</p></div><span class="dt">資料整理</span></div>
+        <div class="dir"><span class="dn">03</span><div class="dc"><h3>理賠前置資料整理 · 保戶健康存摺</h3><p>讓出險時的醫療資料一開始就是結構化、有時間軸佐證的數據。</p></div><span class="dt">理賠前置</span></div>
+        <div class="dir"><span class="dn">04</span><div class="dc"><h3>共同規劃健康教育與預防照護內容</h3><p>慢性病照護與預防照護的衛教內容，與保戶溝通做得更深。</p></div><span class="dt">衛教共創</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 WHAT WE DO — proof (real screenshots) -->
+  <section class="band">
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">03</span>　怎麼運作</div>
+      <h2 class="sec-h reveal d1">散落的醫療資料，自動整理成一條<em>健康時間軸</em>。</h2>
+      <p class="lede reveal d2">飼主不用再手動整理。以下三張都是 App 的實際畫面。</p>
 
       <!-- cap 1: blood scan -->
       <div class="cap">
@@ -376,10 +388,10 @@ footer .fmark em{font-style:italic;color:var(--rose-deep)}
     </div>
   </section>
 
-  <!-- VALUE -->
-  <section class="band">
+  <!-- 04 VALUE -->
+  <section>
     <div class="wrap">
-      <div class="kicker reveal"><span class="no">03</span>　對貴公司的價值</div>
+      <div class="kicker reveal"><span class="no">04</span>　兩端價值</div>
       <h2 class="sec-h reveal d1">同一份結構化資料，<em>兩端</em>同時受益。</h2>
       <div class="value-grid">
         <div class="vcard claims reveal d1">
@@ -405,75 +417,34 @@ footer .fmark em{font-style:italic;color:var(--rose-deep)}
           </ul>
         </div>
       </div>
-      <p class="hedge reveal">關於審核效率與爭議率的效益為合作假設，正是我們希望透過下方試點，用貴公司實際數據共同驗證的目標。Pawtient AI 提供健康資料的紀錄與整理，AI 內容僅供參考，不構成醫療診斷，也不取代獸醫師的判斷。</p>
+      <p class="hedge reveal">關於審核效率與爭議率的效益為合作假設，正是我們希望透過上述試點，用貴公司實際數據共同驗證的目標。Pawtient AI 提供健康資料的紀錄與整理，AI 內容僅供參考，不構成醫療診斷，也不取代獸醫師的判斷。</p>
     </div>
   </section>
 
-  <!-- FOUNDER -->
-  <section class="founder">
+  <!-- 05 WHY NOW — problem + market + origin, compact -->
+  <section class="band">
     <div class="wrap">
-      <div class="fkicker reveal">源起</div>
-      <p class="fstatement reveal d1">兩年前，創辦人的貓被診斷出<em>慢性腎臟病</em>。</p>
-      <p class="by reveal d2">那段時間，光是整理血檢報告、追蹤用藥、回想獸醫師的每一句叮嚀，所花的心力就遠超想像。這份「整理病史」的負擔，是他後來決定全職投入開發 Pawtient AI 的原因，也正好是保險公司在理賠審核上最熟悉的成本。我們想把同一個問題，從兩端一起解決。</p>
-    </div>
-  </section>
-
-  <!-- COOPERATION DIRECTIONS -->
-  <section>
-    <div class="wrap">
-      <div class="kicker reveal"><span class="no">04</span>　合作方向</div>
-      <h2 class="sec-h reveal d1">我們初步希望與貴公司探討的<em>四種</em>可能。</h2>
-      <div class="dirs reveal d2">
-        <div class="dir"><span class="dn">01</span><div class="dc"><h3>寵物險保戶的健康管理加值服務</h3><p>把 Pawtient AI 作為保單的附加價值，提供給寵物險保戶使用。</p></div><span class="dt">加值服務</span></div>
-        <div class="dir"><span class="dn">02</span><div class="dc"><h3>協助保戶整理病史時間軸</h3><p>血檢、看診、用藥與病程，自動彙整成一條可追溯的紀錄。</p></div><span class="dt">資料整理</span></div>
-        <div class="dir"><span class="dn">03</span><div class="dc"><h3>理賠前置資料整理 · 保戶健康存摺</h3><p>讓出險時的醫療資料一開始就是結構化、有時間軸佐證的數據。</p></div><span class="dt">理賠前置</span></div>
-        <div class="dir"><span class="dn">04</span><div class="dc"><h3>共同規劃健康教育與預防照護內容</h3><p>慢性病照護與預防照護的衛教內容，與保戶溝通做得更深。</p></div><span class="dt">衛教共創</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PILOT -->
-  <section id="pilot" class="band">
-    <div class="wrap">
-      <div class="kicker reveal"><span class="no">05</span>　試點方案</div>
-      <h2 class="sec-h reveal d1">先做一個小而<em>可逆</em>的試點，用數據說話。</h2>
-      <div class="pilot-head reveal d2">
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>範圍很小</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完全可逆</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不簽長約</span>
-        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不涉系統整合</span>
-      </div>
-      <div class="flow reveal d2">
-        <div class="fstep"><div class="fn">一</div><h4>提供一批保戶免費使用</h4><p>選定一小群寵物險保戶，免費使用 Pawtient AI 三個月，開始累積結構化健康紀錄。</p></div>
-        <div class="fstep"><div class="fn">二</div><h4>貴公司觀察理賠表現</h4><p>由貴公司在這段期間觀察理賠申請的審核效率與爭議率，是否出現可衡量的變化。</p></div>
-        <div class="fstep"><div class="fn">三</div><h4>用結果決定下一步</h4><p>純粹先驗證數據是否真的對貴公司有幫助，再一起討論要不要、以及如何擴大。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARKET -->
-  <section>
-    <div class="wrap">
-      <div class="kicker reveal"><span class="no">06</span>　市場脈絡</div>
-      <div class="market">
-        <div class="reveal">
-          <div class="bignum tnum">631<span class="un">億元</span></div>
-          <div class="mlabel">台灣寵物市場規模</div>
-        </div>
+      <div class="kicker reveal"><span class="no">05</span>　為什麼是現在</div>
+      <h2 class="sec-h reveal d1">理賠最耗成本的不是金額，是<em>整理資料</em>——而這個負擔正在變大。</h2>
+      <div class="why-grid">
         <div class="reveal d1">
-          <p class="mbody">市場規模持續成長，但<b>慢性病寵物的長期照護與理賠資料，至今仍高度仰賴人工整理</b>。這正是我們想補上的缺口，也是寵物保險最能差異化的環節。</p>
-          <p class="srcnote"><b>市場背景：</b>慢性腎臟病影響最高約 40% 的 10 歲以上貓咪、約 80% 的 15 歲以上貓咪（資料來源：康乃爾大學貓科健康中心）。高齡與慢性病族群，正是理賠最頻繁、資料最複雜的一群。</p>
+          <p>醫療文件分散、病史時間軸不清楚，核保與理賠人員得花大量人力逐筆比對；慢性病寵物的病程橫跨數年、數十份檢驗單，散落在不同診所，尤其明顯。</p>
+          <p class="why-origin">這也是我們的起點：兩年前，創辦人的貓確診<em>慢性腎臟病</em>，整理病史的心力遠超想像——Pawtient AI 因此誕生。</p>
+        </div>
+        <div class="why-stats reveal d2">
+          <div class="why-stat"><b class="tnum">631 億元</b><span>台灣寵物市場規模，且持續成長</span></div>
+          <div class="why-stat"><b class="tnum">40% / 80%</b><span>10 歲以上 / 15 歲以上貓咪受慢性腎臟病影響（資料來源：康乃爾大學貓科健康中心）</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- 06 CTA -->
   <section id="contact" class="cta">
     <div class="wrap">
-      <div class="kicker reveal"><span class="no">07</span>　下一步</div>
+      <div class="kicker reveal"><span class="no">06</span>　下一步</div>
       <h2 class="reveal d1">給我們 <em>30 分鐘</em>，<br>聊聊怎麼一起開始。</h2>
-      <p class="lede reveal d2">我們希望安排一場線上會議，簡要介紹 Pawtient AI 目前的功能、使用者回饋，以及與寵物保險結合的試點方案。</p>
+      <p class="lede reveal d2">線上會議，簡要介紹 Pawtient AI 目前的功能、使用者回饋，以及與寵物保險結合的試點方案。</p>
       <div class="contact reveal d2">
         <div class="cinfo"><div class="ck">窗口</div><div class="cv serif">Kono</div></div>
         <div class="cinfo"><div class="ck">電話</div><div class="cv tnum">0979 450 928</div></div>
