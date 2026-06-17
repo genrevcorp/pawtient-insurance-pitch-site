@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pawtient AI × 明台產險 — 合作提案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF5F1; --surface:#FFFDFB; --surface-2:#F4ECE6;
+  --ink:#2B2126; --ink-soft:#75646D; --ink-faint:#A4929B;
+  --rose:#D47FA6; --rose-deep:#A8517D; --rose-ink:#8C3E66; --rose-wash:#F7E9F0; --rose-line:#EBD3DF;
+  --line:#E8DCE0;
+  --green:#3E8E7E; --green-wash:#E7F3F0;
+  --shadow:0 1px 2px rgba(67,37,52,.05),0 14px 40px -18px rgba(67,37,52,.22);
+  --shadow-soft:0 1px 2px rgba(67,37,52,.04),0 6px 22px -14px rgba(67,37,52,.16);
+  --radius:16px; --radius-sm:11px;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --maxw:1060px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.8; font-size:16px;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1200px 520px at 88% -10%, color-mix(in srgb, var(--rose) 12%, transparent), transparent 62%),
+    radial-gradient(900px 480px at -6% 30%, color-mix(in srgb, var(--green) 6%, transparent), transparent 60%);
+}
+::selection{background:var(--rose);color:var(--surface)}
+a{color:var(--rose-ink);text-decoration:none}
+.serif{font-family:"Fraunces","Noto Serif TC",serif}
+.tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:50;transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--rose),var(--rose-deep))}
+
+/* top brand bar */
+.topbar{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(20px,5vw,56px);background:color-mix(in srgb,var(--paper) 80%,transparent);
+  backdrop-filter:blur(10px) saturate(1.1);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.topbar .mark{font-family:"Fraunces","Noto Serif TC",serif;font-weight:900;font-size:18px;letter-spacing:.2px}
+.topbar .mark em{font-style:italic;color:var(--rose-deep)}
+.topbar .mini{font-size:11.5px;letter-spacing:.26em;color:var(--ink-faint);font-weight:600}
+.topbar .go{font-size:13px;font-weight:600;color:var(--rose-ink);border:1px solid var(--rose-line);
+  padding:7px 15px;border-radius:99px;background:var(--surface);transition:background .2s var(--ease-out),transform .12s var(--ease-out)}
+.topbar .go:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.topbar .go:hover{background:var(--rose-wash)}}
+@media(max-width:620px){.topbar .mini{display:none}}
+
+/* shell */
+main{position:relative;z-index:1}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+section{padding:clamp(64px,9vw,118px) 0}
+.kicker{display:inline-flex;align-items:center;gap:11px;color:var(--rose-deep);font-weight:700;
+  font-size:12px;letter-spacing:.3em;margin-bottom:22px}
+.kicker .no{font-family:"Fraunces",serif;font-style:italic;font-weight:600;font-size:16px;letter-spacing:0;color:var(--rose)}
+.kicker::before{content:"";width:26px;height:1px;background:var(--rose-deep);opacity:.55}
+
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+.sec-h{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(25px,3.6vw,38px);
+  line-height:1.34;letter-spacing:.01em}
+.sec-h em{font-style:normal;color:var(--rose-deep)}
+.lede{color:var(--ink-soft);font-size:clamp(16px,1.7vw,18.5px);max-width:58ch;margin-top:18px}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(48px,7vw,86px)}
+.hero .eyebrow{display:flex;align-items:center;gap:12px;color:var(--rose-deep);font-weight:700;
+  font-size:12.5px;letter-spacing:.3em;margin-bottom:26px}
+.hero .eyebrow::after{content:"";height:1px;flex:1;max-width:160px;
+  background:linear-gradient(90deg,var(--rose-line),transparent)}
+.hero h1{font-family:"Fraunces","Noto Serif TC",serif;font-weight:900;
+  font-size:clamp(34px,6vw,62px);line-height:1.2;letter-spacing:.005em}
+.hero h1 em{font-style:italic;color:var(--rose-deep)}
+.hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15px;
+  padding:14px 26px;border-radius:99px;transition:transform .13s var(--ease-out),box-shadow .2s var(--ease-out),background .2s}
+.btn-primary{background:var(--rose-deep);color:var(--surface);box-shadow:0 10px 26px -12px var(--rose-deep)}
+.btn-primary:active{transform:scale(.975)}
+.btn-ghost{color:var(--rose-ink);border:1px solid var(--rose-line);background:var(--surface)}
+.btn-ghost:active{transform:scale(.975)}
+.btn:focus-visible,.topbar .go:focus-visible,a:focus-visible{outline:2px solid var(--rose-deep);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){
+  .btn-primary:hover{background:var(--rose-ink)}
+  .btn-ghost:hover{background:var(--rose-wash)}
+}
+
+/* hero TL;DR — the whole pitch in three boxes */
+.tldr{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid var(--rose-line);border-radius:var(--radius);overflow:hidden;
+  background:var(--surface);box-shadow:var(--shadow-soft)}
+.tldr .ti{padding:22px 24px;border-right:1px solid var(--line)}
+.tldr .ti:last-child{border-right:none}
+.tldr .tk{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);font-size:14px}
+.tldr .tt{font-weight:700;font-size:16px;margin-top:9px;color:var(--ink);line-height:1.4}
+.tldr .td{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.65}
+@media(max-width:720px){.tldr{grid-template-columns:1fr}
+  .tldr .ti{border-right:none;border-bottom:1px solid var(--line)}
+  .tldr .ti:last-child{border-bottom:none}}
+
+/* stat strip */
+.statrow{display:flex;flex-wrap:wrap;margin-top:40px;border-block:2.5px double var(--rose-line)}
+.stat{flex:1 1 150px;padding:22px 24px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat b{display:block;font-family:"Fraunces",serif;font-weight:900;font-size:clamp(30px,4vw,42px);
+  line-height:1.05;color:var(--rose-deep);letter-spacing:-.01em}
+.stat b .u{font-size:.5em;font-weight:600;color:var(--ink-soft);margin-left:3px}
+.stat span{display:block;font-size:13px;color:var(--ink-soft);letter-spacing:.1em;margin-top:6px}
+@media(max-width:680px){.stat{flex-basis:46%;border-bottom:1px solid var(--line)}
+  .stat:nth-child(2n){border-right:none}}
+
+/* tinted band */
+.band{background:linear-gradient(180deg,var(--surface-2),color-mix(in srgb,var(--surface-2) 40%,var(--paper)));
+  border-block:1px solid var(--line)}
+
+/* ---------- pilot ---------- */
+.pilot-head{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 36px}
+.chip{font-size:13px;font-weight:600;color:var(--green);background:var(--green-wash);
+  border:1px solid color-mix(in srgb,var(--green) 22%,transparent);border-radius:99px;padding:8px 16px;
+  display:inline-flex;align-items:center;gap:7px}
+.chip svg{width:14px;height:14px}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-soft)}
+@media(max-width:760px){.flow{grid-template-columns:1fr}}
+.fstep{padding:clamp(22px,3vw,32px);border-right:1px solid var(--line);position:relative}
+.fstep:last-child{border-right:none}
+@media(max-width:760px){.fstep{border-right:none;border-bottom:1px solid var(--line)}.fstep:last-child{border-bottom:none}}
+.fstep .fn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);font-size:15px;
+  display:flex;align-items:center;gap:8px}
+.fstep .fn::after{content:"";flex:1;height:1px;background:var(--line)}
+.fstep h4{font-family:"Noto Serif TC",serif;font-weight:700;font-size:18px;margin:13px 0 8px}
+.fstep p{font-size:14px;color:var(--ink-soft);line-height:1.7}
+
+/* ---------- cooperation directions ---------- */
+.dirs{margin-top:14px;border-top:2.5px double var(--rose-line)}
+.dir{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(22px,3vw,38px);align-items:center;
+  padding:clamp(24px,3.4vw,36px) 4px;border-bottom:1px solid var(--line)}
+.dir .dn{font-family:"Fraunces",serif;font-style:italic;font-weight:600;color:var(--rose);
+  font-size:clamp(26px,3.4vw,40px);line-height:1}
+.dir .dc h3{font-family:"Noto Serif TC",serif;font-weight:700;font-size:clamp(18px,2.1vw,22px)}
+.dir .dc p{font-size:14px;color:var(--ink-soft);margin-top:5px;max-width:54ch}
+.dir .dt{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--ink-faint);white-space:nowrap;
+  border:1px solid var(--line);border-radius:99px;padding:5px 12px}
+@media(max-width:640px){.dir{grid-template-columns:auto 1fr;gap:16px}.dir .dt{display:none}}
+
+/* ---------- what we do: capability rows w/ exhibits ---------- */
+.cap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,68px);align-items:center;
+  margin-top:clamp(40px,6vw,76px)}
+.cap:nth-child(even) .cap-copy{order:2}
+@media(max-width:860px){.cap{grid-template-columns:1fr;gap:30px}
+  .cap:nth-child(even) .cap-copy{order:0}}
+.cap-copy .tag{display:inline-block;font-family:"Fraunces",serif;font-style:italic;font-weight:600;
+  color:var(--rose);font-size:17px;margin-bottom:10px}
+.cap-copy h3{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(21px,2.5vw,27px);line-height:1.4}
+.cap-copy p{color:var(--ink-soft);font-size:15.5px;margin-top:14px;max-width:42ch}
+.cap-copy .micro{margin-top:16px;font-size:13px;color:var(--ink-faint);letter-spacing:.04em}
+
+/* phone frame */
+.phone{position:relative;width:100%;max-width:340px;margin:0 auto;aspect-ratio:9/18;
+  background:#1a1411;border-radius:40px;padding:11px;box-shadow:0 2px 4px rgba(67,37,52,.2),0 34px 70px -26px rgba(67,37,52,.5);}
+.phone::before{content:"";position:absolute;top:13px;left:50%;transform:translateX(-50%);
+  width:96px;height:7px;border-radius:99px;background:#2a221f;z-index:3}
+.phone-screen{position:relative;height:100%;border-radius:30px;overflow:hidden;background:var(--surface);
+  display:flex;flex-direction:column}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.phone.shot{aspect-ratio:1080/2424}
+.phone.shot::before{display:none}
+.exhibit-cap{text-align:center;font-size:11.5px;color:var(--ink-faint);margin-top:14px;letter-spacing:.04em}
+
+/* ---------- value: two-sided ---------- */
+.value-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+@media(max-width:760px){.value-grid{grid-template-columns:1fr}}
+.vcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(26px,3.2vw,38px);position:relative}
+.vcard .vh{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.vcard .vh .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto}
+.vcard .vh .ic svg{width:20px;height:20px}
+.vcard.claims .vh .ic{background:var(--rose-wash);color:var(--rose-deep)}
+.vcard.policy .vh .ic{background:var(--green-wash);color:var(--green)}
+.vcard .vh h3{font-family:"Noto Serif TC",serif;font-weight:700;font-size:20px}
+.vcard .vh .who{font-size:11.5px;color:var(--ink-faint);letter-spacing:.12em;margin-top:2px}
+.vcard ul{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:4px}
+.vcard li{position:relative;padding-left:19px;font-size:14.5px;color:var(--ink-soft);line-height:1.65}
+.vcard li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:2px}
+.vcard.claims li::before{background:var(--rose)}
+.vcard.policy li::before{background:var(--green)}
+.vcard li b{color:var(--ink);font-weight:700}
+.hedge{margin-top:30px;font-size:12.5px;color:var(--ink-faint);line-height:1.7;
+  border-top:1px dashed var(--line);padding-top:16px;max-width:56ch}
+
+/* ---------- why now (problem + market + origin, compact) ---------- */
+.why-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,60px);align-items:start;margin-top:26px}
+@media(max-width:840px){.why-grid{grid-template-columns:1fr;gap:34px}}
+.why-grid p{color:var(--ink-soft);font-size:16px;line-height:1.85;max-width:50ch;text-wrap:pretty}
+.why-origin{margin-top:16px;font-size:14.5px;color:var(--ink-faint)}
+.why-origin em{font-family:"Fraunces","Noto Serif TC",serif;font-style:italic;color:var(--rose-deep)}
+.why-stats{border-top:2.5px double var(--rose-line)}
+.why-stat{padding:18px 4px;border-bottom:1px solid var(--line)}
+.why-stat b{display:block;font-family:"Fraunces",serif;font-weight:900;font-size:clamp(26px,3.6vw,38px);
+  color:var(--rose-deep);line-height:1.05;letter-spacing:-.01em}
+.why-stat span{display:block;font-size:13px;color:var(--ink-soft);letter-spacing:.04em;margin-top:5px;line-height:1.55}
+
+/* ---------- CTA ---------- */
+.cta{background:linear-gradient(180deg,var(--rose-wash),color-mix(in srgb,var(--rose-wash) 30%,var(--paper)));
+  border-top:1px solid var(--rose-line)}
+.cta h2{font-family:"Fraunces","Noto Serif TC",serif;font-weight:900;font-size:clamp(28px,4.4vw,46px);
+  line-height:1.25;letter-spacing:.005em}
+.cta h2 em{font-style:italic;color:var(--rose-deep)}
+.cta .lede{max-width:50ch}
+.contact{margin-top:42px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0;
+  border:1px solid var(--rose-line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.cinfo{padding:22px 24px;border-right:1px solid var(--line)}
+.cinfo:last-child{border-right:none}
+.cinfo .ck{font-size:11px;letter-spacing:.18em;color:var(--ink-faint);font-weight:700}
+.cinfo .cv{font-size:17px;font-weight:700;margin-top:7px;word-break:break-all}
+.cinfo .cv.serif{font-family:"Fraunces","Noto Serif TC",serif;color:var(--rose-deep);font-size:20px}
+@media(max-width:680px){.cinfo{border-right:none;border-bottom:1px solid var(--line)}.cinfo:last-child{border-bottom:none}}
+
+footer{padding:38px 0 60px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-end}
+footer .disc{font-size:12px;color:var(--ink-faint);line-height:1.75;max-width:54ch}
+footer .fmark{font-family:"Fraunces","Noto Serif TC",serif;font-weight:900;font-size:17px}
+footer .fmark em{font-style:italic;color:var(--rose-deep)}
+
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}.reveal.d3{transition-delay:.21s}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .topbar .go:active,.btn:active{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="topbar">
+  <div class="mark">Pawtient <em>AI</em></div>
+  <div class="mini">合作提案 · 明台產險</div>
+  <a class="go" href="#contact">安排會議 →</a>
+</header>
+
+<main>
+
+  <!-- HERO + TL;DR -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow reveal">PAWTIENT AI　×　明台產險</div>
+      <h1 class="reveal d1">把寵物的健康資料，<br>變成<em>看得懂、可追溯</em>的結構化數據。</h1>
+
+      <div class="tldr reveal d2">
+        <div class="ti">
+          <div class="tk">是什麼</div>
+          <div class="tt">AI 自動整理寵物健康資料</div>
+          <div class="td">把血檢報告與診療紀錄，轉成結構化、有時間軸的健康紀錄。</div>
+        </div>
+        <div class="ti">
+          <div class="tk">我們提議</div>
+          <div class="tt">免費 3 個月小型試點</div>
+          <div class="td">一批保戶免費試用，由貴公司觀察理賠審核變化。可逆、不簽長約、不涉系統整合。</div>
+        </div>
+        <div class="ti">
+          <div class="tk">對貴公司</div>
+          <div class="tt">補上飼主端的健康時間軸</div>
+          <div class="td">在你們的理賠數位化基礎上，加一層跨院、有時間戳的縱向紀錄，降低慢性病與既往症爭議。</div>
+        </div>
+      </div>
+
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary" href="#contact">安排 30 分鐘線上會議</a>
+        <a class="btn btn-ghost" href="#pilot">先看試點怎麼做</a>
+      </div>
+
+      <div class="statrow reveal d3">
+        <div class="stat"><b class="tnum">~1,000</b><span>實際使用者</span></div>
+        <div class="stat"><b class="tnum">64<span class="u">種</span></b><span>血檢參數庫</span></div>
+        <div class="stat"><b class="tnum">21<span class="u">種</span></b><span>健康紀錄型態</span></div>
+        <div class="stat"><b>iOS<span class="u"> + </span>Android</b><span>雙平台 · 9 種語言</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 PILOT — lead with the offer -->
+  <section id="pilot" class="band">
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">01</span>　試點提案</div>
+      <h2 class="sec-h reveal d1">先做一個小而<em>可逆</em>的試點，用貴公司的數據說話。</h2>
+      <p class="lede reveal d2">不簽長約、不涉系統整合，純粹先驗證一件事：結構化的健康資料，能不能讓貴公司的理賠審核更有效率。</p>
+      <div class="pilot-head reveal d2">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>範圍很小</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>完全可逆</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不簽長約</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>不涉系統整合</span>
+      </div>
+      <div class="flow reveal d2">
+        <div class="fstep"><div class="fn">一</div><h4>提供一批保戶免費使用</h4><p>選定一小群寵物險保戶，免費使用 Pawtient AI 三個月，開始累積結構化健康紀錄。</p></div>
+        <div class="fstep"><div class="fn">二</div><h4>貴公司觀察理賠表現</h4><p>由貴公司在這段期間觀察理賠申請的審核效率與爭議率，是否出現可衡量的變化。</p></div>
+        <div class="fstep"><div class="fn">三</div><h4>用結果決定下一步</h4><p>純粹先驗證數據是否真的對貴公司有幫助，再一起討論要不要、以及如何擴大。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COOPERATION DIRECTIONS -->
+  <section>
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">02</span>　合作方向</div>
+      <h2 class="sec-h reveal d1">試點之外，我們還能一起做<em>這四件事</em>。</h2>
+      <div class="dirs reveal d2">
+        <div class="dir"><span class="dn">01</span><div class="dc"><h3>寵物險保戶的健康管理加值服務</h3><p>把 Pawtient AI 作為保單的附加價值，提供給寵物險保戶使用。</p></div><span class="dt">加值服務</span></div>
+        <div class="dir"><span class="dn">02</span><div class="dc"><h3>協助保戶整理病史時間軸</h3><p>血檢、看診、用藥與病程，自動彙整成一條可追溯的紀錄。</p></div><span class="dt">資料整理</span></div>
+        <div class="dir"><span class="dn">03</span><div class="dc"><h3>理賠前置資料整理 · 保戶健康存摺</h3><p>讓出險時的醫療資料一開始就是結構化、有時間軸佐證的數據。</p></div><span class="dt">理賠前置</span></div>
+        <div class="dir"><span class="dn">04</span><div class="dc"><h3>共同規劃健康教育與預防照護內容</h3><p>慢性病照護與預防照護的衛教內容，與保戶溝通做得更深。</p></div><span class="dt">衛教共創</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 WHAT WE DO — proof (real screenshots) -->
+  <section class="band">
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">03</span>　怎麼運作</div>
+      <h2 class="sec-h reveal d1">散落的醫療資料，自動整理成一條<em>健康時間軸</em>。</h2>
+      <p class="lede reveal d2">飼主不用再手動整理。以下三張都是 App 的實際畫面。</p>
+
+      <!-- cap 1: blood scan -->
+      <div class="cap">
+        <div class="cap-copy reveal">
+          <span class="tag">血檢報告 · AI 辨識</span>
+          <h3>拍一張檢驗單，自動整理成結構化數據</h3>
+          <p>AI 從檢驗單抓出每一項參數、數值、單位與參考區間，支援 64 種血檢項目；偏高、偏低自動色碼，多次檢驗並排對照，存檔前可逐項確認。</p>
+          <p class="micro">免手動輸入 · 來源標注 Cornell eClinPath 生理意義說明</p>
+        </div>
+        <div class="reveal d1">
+          <div class="phone shot" data-shot="blood-panel">
+            <div class="phone-screen">
+              <img src="../screenshots/01_blood_test_comparison_table.png" alt="血液檢測多次對比表：每項參數附參考區間，數值依高低以色碼標示" loading="lazy">
+            </div>
+          </div>
+          <p class="exhibit-cap">Pawtient AI 實際畫面 · 血檢多次對比</p>
+        </div>
+      </div>
+
+      <!-- cap 2: trend -->
+      <div class="cap">
+        <div class="cap-copy reveal">
+          <span class="tag">趨勢與對比</span>
+          <h3>一次數值是點，多次才看得出一條線</h3>
+          <p>同一參數跨次檢驗自動畫成折線趨勢，附白話說明與正常區間帶；數值偏離一眼看出方向，回診前 30 秒掌握全貌。</p>
+          <p class="micro">表格 / 趨勢一鍵切換 · 可搜尋、可排序</p>
+        </div>
+        <div class="reveal d1">
+          <div class="phone shot" data-shot="trend">
+            <div class="phone-screen">
+              <img src="../screenshots/02_blood_test_trends.png" alt="血檢參數趨勢圖：折線顯示變化方向，附白話說明與正常區間帶" loading="lazy">
+            </div>
+          </div>
+          <p class="exhibit-cap">Pawtient AI 實際畫面 · 參數趨勢追蹤</p>
+        </div>
+      </div>
+
+      <!-- cap 3: visit summary -->
+      <div class="cap">
+        <div class="cap-copy reveal">
+          <span class="tag">看診模式 · AI 行前簡報</span>
+          <h3>回診前，AI 先幫你把重點整理好</h3>
+          <p>看診模式可錄音、拍處方與檢查單；AI 把近期健康資料整理成「行前簡報」與建議詢問獸醫師的問題，異常自動標出（例如「CREA 超出參考區間」），回診或出險時重點一目了然。</p>
+          <p class="micro">錄音前請先徵得獸醫師同意 · AI 內容僅供整理參考</p>
+        </div>
+        <div class="reveal d1">
+          <div class="phone shot" data-shot="visit-summary">
+            <div class="phone-screen">
+              <img src="../screenshots/03_vet_visit_ai_briefing.png" alt="AI 行前簡報：列出近期重點關注（體重、症狀、CREA 超出參考區間）與建議詢問獸醫師的問題" loading="lazy">
+            </div>
+          </div>
+          <p class="exhibit-cap">Pawtient AI 實際畫面 · AI 行前簡報</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 VALUE -->
+  <section>
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">04</span>　兩端價值</div>
+      <h2 class="sec-h reveal d1">同一份結構化資料，<em>兩端</em>同時受益。</h2>
+      <div class="value-grid">
+        <div class="vcard claims reveal d1">
+          <div class="vh">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div><h3>理賠端</h3><div class="who">核保 · 理賠審核</div></div>
+          </div>
+          <ul>
+            <li><b>審核更快</b>：完整、有時間軸佐證的病史，減少來回索取與人工比對。</li>
+            <li><b>判斷更有依據</b>：結構化數據讓既往症與病程一目了然。</li>
+            <li><b>爭議與誤賠可望降低</b>：資料越清楚，認定分歧的空間越小。</li>
+          </ul>
+        </div>
+        <div class="vcard policy reveal d2">
+          <div class="vh">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div><h3>保戶端</h3><div class="who">體驗 · 續保黏著</div></div>
+          </div>
+          <ul>
+            <li><b>實用的加值服務</b>：保戶獲得專業、好用的健康管理工具。</li>
+            <li><b>差異化保單</b>：把「照護陪伴」做進保險，而不只是出險時才見面。</li>
+            <li><b>提升黏著</b>：資料累積本身就產生續保的理由。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="hedge reveal">關於審核效率與爭議率的效益為合作假設，正是我們希望透過上述試點，用貴公司實際數據共同驗證的目標。Pawtient AI 提供健康資料的紀錄與整理，AI 內容僅供參考，不構成醫療診斷，也不取代獸醫師的判斷。</p>
+    </div>
+  </section>
+
+  <!-- 05 WHY THIS COMPANY -->
+  <section class="band">
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">05</span>　為什麼是明台</div>
+      <h2 class="sec-h reveal d1">你們開了寵物險的路，<em>飼主端</em>的健康時間軸由我們補上。</h2>
+      <div class="why-grid">
+        <div class="reveal d1">
+          <p>明台是台灣最早投入寵物險的業者之一，也持續走在寵物險數位化的前面。但飼主平日在家、以及跨不同院所的健康軌跡，仍是理賠審核時的缺口。</p>
+          <p>Pawtient AI 補的正是這條「飼主端、跨院、有時間戳」的縱向紀錄。越是面向高齡與慢性病寵物，「投保前狀態」的舉證就越關鍵——結構化的健康時間軸能直接降低爭議與人工工時。</p>
+        </div>
+        <div class="why-stats reveal d2">
+          <div class="why-stat"><b class="tnum">631 億元</b><span>台灣寵物市場規模，且持續成長</span></div>
+          <div class="why-stat"><b class="tnum">40% / 80%</b><span>10 歲以上 / 15 歲以上貓咪受慢性腎臟病影響（資料來源：康乃爾大學貓科健康中心）</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 CTA -->
+  <section id="contact" class="cta">
+    <div class="wrap">
+      <div class="kicker reveal"><span class="no">06</span>　下一步</div>
+      <h2 class="reveal d1">給我們 <em>30 分鐘</em>，<br>聊聊怎麼一起開始。</h2>
+      <p class="lede reveal d2">線上會議，簡要介紹 Pawtient AI 目前的功能、使用者回饋，以及與寵物保險結合的試點方案。</p>
+      <div class="contact reveal d2">
+        <div class="cinfo"><div class="ck">窗口</div><div class="cv serif">Kono</div></div>
+        <div class="cinfo"><div class="ck">電話</div><div class="cv tnum">0979 450 928</div></div>
+        <div class="cinfo"><div class="ck">LINE ID</div><div class="cv tnum">10091269</div></div>
+        <div class="cinfo"><div class="ck">App</div><div class="cv">App Store · Google Play 搜尋 Pawtient AI</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fmark">Pawtient <em>AI</em> · 通用創新有限公司</div>
+      <p class="disc">Pawtient AI 是寵物健康紀錄與整理工具，提供飼主記錄、追蹤與彙整健康資料。AI 功能僅供整理與參考之用，不構成醫療診斷，也不能取代獸醫師的診斷與治療。本提案所述理賠效益為待驗證的合作假設。</p>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var prog=document.getElementById('progress');
+  function onScroll(){
+    var h=document.documentElement, st=h.scrollTop||document.body.scrollTop,
+        sh=(h.scrollHeight-h.clientHeight)||1;
+    prog.style.transform='scaleX('+(st/sh)+')';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+  items.forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
