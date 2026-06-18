@@ -223,6 +223,8 @@ p,li{text-wrap:pretty}
 .cinfo .ck{font-size:11px;letter-spacing:.18em;color:var(--ink-faint);font-weight:700}
 .cinfo .cv{font-size:17px;font-weight:700;margin-top:7px;word-break:break-all}
 .cinfo .cv.serif{font-family:"Fraunces","Noto Serif TC",serif;color:var(--rose-deep);font-size:20px}
+.cinfo .cv a{color:inherit;border-bottom:1px solid var(--rose-line);transition:color .2s,border-color .2s}
+@media (hover:hover) and (pointer:fine){.cinfo .cv a:hover{color:var(--rose-deep);border-bottom-color:var(--rose-deep)}}
 @media(max-width:680px){.cinfo{border-right:none;border-bottom:1px solid var(--line)}.cinfo:last-child{border-bottom:none}}
 
 footer{padding:38px 0 60px;border-top:1px solid var(--line)}
@@ -447,9 +449,9 @@ footer .fmark em{font-style:italic;color:var(--rose-deep)}
       <p class="lede reveal d2">線上會議，簡要介紹 Pawtient AI 目前的功能、使用者回饋，以及與寵物保險結合的試點方案。</p>
       <div class="contact reveal d2">
         <div class="cinfo"><div class="ck">窗口</div><div class="cv serif">Kono</div></div>
-        <div class="cinfo"><div class="ck">電話</div><div class="cv tnum">0979 450 928</div></div>
-        <div class="cinfo"><div class="ck">LINE ID</div><div class="cv tnum">10091269</div></div>
-        <div class="cinfo"><div class="ck">App</div><div class="cv">App Store · Google Play 搜尋 Pawtient AI</div></div>
+        <div class="cinfo"><div class="ck">電話</div><div class="cv tnum"><a href="tel:+886979450928">0979 450 928</a></div></div>
+        <div class="cinfo"><div class="ck">LINE ID</div><div class="cv tnum"><a href="https://line.me/ti/p/~10091269" target="_blank" rel="noopener">10091269</a></div></div>
+        <div class="cinfo"><div class="ck">App</div><div class="cv"><a href="https://apps.apple.com/tw/search?term=Pawtient%20AI" target="_blank" rel="noopener">App Store</a> · <a href="https://play.google.com/store/search?q=Pawtient%20AI&amp;c=apps" target="_blank" rel="noopener">Google Play</a> 搜尋 Pawtient AI</div></div>
       </div>
     </div>
   </section>
