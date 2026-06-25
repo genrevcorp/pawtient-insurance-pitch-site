@@ -1649,4 +1649,13 @@ footer .fmark .brand-logo{height:25px}
   #inaction .demo-screen-fig .demo-cap{text-align:left;max-width:none;padding-inline:clamp(20px,5.5vw,24px)}
 }
 </style>
+<style id="doss-ticklab-fix">
+/* §02「我們做什麼」scroll-timeline labels (colleague's .do-ss component): the inactive
+   beat labels rendered at .38 opacity on --ink-faint = unreadable, and the centred ticks
+   tucked their right edge under the phone. Make them readable + anchor the label to the
+   LEFT of the dot (dot stays on the axis) so it reads into the open margin, clear of the
+   phone. Append-only override, scoped under #do; desktop-only (axis is display:none ≤860px). */
+#do .do-ss-ticklab{color:var(--ink-soft);opacity:calc(.82 + .18*var(--act,0))}
+#do .do-ss-tick{transform:translate(calc(-100% + 5px),-50%);flex-direction:row-reverse}
+</style>
 </body></html>
