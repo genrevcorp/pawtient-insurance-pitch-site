@@ -1584,10 +1584,12 @@ footer .fmark .brand-logo{height:25px}
         var op=clamp(1-Math.abs(p-c)/w,0,1);          // 三角形、相鄰重疊 → 不閃空白
         screens[i].style.opacity=op;
         screens[i].style.transform='scale('+(1.06-0.06*op).toFixed(4)+')';   // 輕微呼吸
-        capsEl[i].style.opacity=op;
-        var k=clamp((p-c)/w,-1.3,1.3);
-        capsEl[i].style.transform='translateY('+(-k*20).toFixed(2)+'px)';    // 時間往上流動
-        capsEl[i].style.pointerEvents= op>0.5?'auto':'none';
+        var nearest=Math.max(0,Math.min(N-1,Math.round(p/w)));
+        var capOp=(i===nearest)?1:0;                         // hard swap: exactly ONE caption at all times (zero ghosting)
+        capsEl[i].style.opacity=capOp;
+        capsEl[i].style.transform='none';                    // no translate on text -> crisp, not blurry
+        capsEl[i].style.transition='opacity .18s linear';    // tiny fade so the swap isn't jarring
+        capsEl[i].style.pointerEvents= capOp?'auto':'none';
         ticks[i].style.setProperty('--act', clamp(1-Math.abs(p-c)/(w/2),0,1).toFixed(3));
       }
       fill.style.transform='scaleY('+p.toFixed(4)+')';
@@ -1625,7 +1627,7 @@ footer .fmark .brand-logo{height:25px}
 }
 
 /* shared caption (.ct = block title; inner <b> stays inline) */
-#inaction .demo-cap{margin-top:18px;font-size:15px;color:var(--ink-soft);line-height:1.78;text-wrap:pretty}
+#inaction .demo-cap{margin-top:clamp(50px,10vw,62px);font-size:15px;color:var(--ink-soft);line-height:1.78;text-wrap:pretty}
 #inaction .demo-cap .ct{display:block;font-family:"Fraunces","Noto Serif TC",serif;font-weight:600;
   font-size:16.5px;color:var(--ink);letter-spacing:.01em;line-height:1.4;margin-bottom:8px}
 #inaction .demo-cap span b{color:var(--ink);font-weight:700}
