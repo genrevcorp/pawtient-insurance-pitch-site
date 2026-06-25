@@ -1506,7 +1506,7 @@ footer .fmark .brand-logo{height:25px}
    進度全綁 scrollYProgress（不用 spring）；偵測 reduced-motion 則保留原本堆疊版。 */
 (function(){
   try{
-    return;/* intro-test: scrollytelling disabled, use built-in static fallback to avoid crossfade ghosting */ var STEP_VH=90;                 // 每個時刻給多少視窗高度的捲動距離
+    return;/* intro-test: scrollytelling disabled, static fallback to avoid crossfade ghosting */ var STEP_VH=90;                 // 每個時刻給多少視窗高度的捲動距離
     var sec=document.getElementById('do');
     if(!sec) return;
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -1662,10 +1662,12 @@ footer .fmark .brand-logo{height:25px}
 #inaction .demo-foot{margin-top:clamp(40px,5vw,64px);font-size:13px;color:var(--ink-soft);
   line-height:1.85;max-width:74ch}
 
-/* mobile: full-bleed the dense console exhibits so they are as legible as possible
-   (the #1 legibility risk). Page already sets body{overflow-x:hidden}, so 100vw is safe. */
+/* mobile: extend the dense console exhibits to the page edges for legibility (#1 risk).
+   Counter the .wrap padding instead of width:100vw — on iOS Safari a 100vw child overflows
+   the visual viewport (horizontal scroll) even with body{overflow-x:hidden}, which is what
+   forced the overflow-x:clip experiment that in turn broke the sticky scroll animation. */
 @media(max-width:600px){
-  #inaction .demo-screen-fig{width:100vw;margin-inline:calc(50% - 50vw)}
+  #inaction .demo-screen-fig{margin-inline:calc(-1 * clamp(24px,5vw,60px))}
   #inaction .demo-screen-fig .screen-frame{max-width:none;margin:0 8px;padding:6px;border-radius:11px}
   #inaction .demo-hero .screen-frame{max-width:none}
   #inaction .screen-bar{height:19px;padding:0 3px 6px}
