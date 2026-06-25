@@ -601,6 +601,19 @@ footer .fmark .brand-logo{height:25px}
           <p class="exhibit-cap" data-en="Pawtient AI · AI pre-visit briefing">Pawtient AI 實際畫面 · AI 行前簡報</p>
         </div>
       </div>
+
+      <div class="cap">
+        <div class="cap-copy reveal in">
+          <span class="tag" data-en="Pawtient Watch · In development">Pawtient Watch · 開發中</span>
+          <h3 data-en="A hard-to-fake record of health before the policy">難以造假的「投保前健康」紀錄</h3>
+          <p data-en="The upcoming Pawtient Watch (in development) turns an old phone into a pet camera — a dedicated device is coming next — passively detecting behaviour on-device (eating, drinking, vomiting) and filing it into PawtientAI's timeline. For an insurer, that is an objective record — not hand-entered, continuous, and hard to fabricate — evidencing that a pet showed no abnormal symptoms before the policy began. It speaks directly to two of the thorniest problems in claims: judging pre-existing conditions and deterring fabricated claims.">即將推出的 Pawtient Watch（開發中）把舊手機變成寵物攝影機，未來更將推出專屬硬體；在裝置端被動偵測進食、飲水、嘔吐等行為，自動歸入 PawtientAI 時間軸。對保險而言，這是一份非人工輸入、長期連續、難以事後造假的客觀紀錄——能佐證寵物在投保前已長期無異常症狀，直接回應「既往症認定」與「惡意造假」這兩個最棘手的理賠難題。</p>
+          <p class="micro" data-en="In development · dev-build screen; AI content is assistive only, not a medical diagnosis — the owner confirms each event">開發中 · 畫面為開發版；AI 內容僅供參考、非醫療診斷，飼主逐筆確認</p>
+        </div>
+        <div class="reveal d1 in">
+          <div class="phone"><div class="phone-screen"><img src="../screenshots/demo_watch_events.png" alt="Pawtient Watch 開發中畫面：自動偵測的行為事件（飲水、進食、嘔吐／乾嘔），各帶信心分數，可歸入 PawtientAI" data-en-alt="Pawtient Watch dev-build screen: auto-detected behaviour events (drinking, eating, vomiting/retching), each with a confidence score, filed into PawtientAI" loading="eager" decoding="async"></div></div>
+          <p class="exhibit-cap" data-en="Pawtient Watch (in development) · behaviour events">Pawtient Watch（開發中）· 行為事件畫面</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -616,6 +629,7 @@ footer .fmark .brand-logo{height:25px}
             <li data-en="<b>Faster review</b> — complete, timeline-backed histories cut back-and-forth requests and manual comparison." class=""><b>審核更快</b>　完整、有時間軸佐證的病史，減少來回索取與人工比對</li>
             <li data-en="<b>Grounded decisions</b> — structured data renders pre-existing conditions and disease course plain." class=""><b>判斷更有依據</b>　結構化數據讓既往症與病程一目了然</li>
             <li data-en="<b>Fewer disputes</b> — the clearer the data, the less room for disagreement." class=""><b>爭議與誤賠可望降低</b>　資料清楚，認定分歧的空間越小</li>
+            <li data-en="<b>Evidence that is harder to fake</b> — the upcoming <em>Pawtient Watch</em> passively and continuously detects behaviour on-device (eating / drinking / coughing…); each event carries a traceable signal chain, and because it is not hand-entered and accumulates over time, it is hard to back-date or fabricate." class=""><b>更難偽造的佐證</b>　即將推出的 <em>Pawtient Watch</em> 以裝置被動、連續偵測行為（進食／飲水／咳嗽…），每筆都帶可溯源的訊號鏈；非人工輸入、長期累積，難以事後補登或造假</li>
           </ul>
         </div>
         <div class="vcard">
@@ -628,6 +642,81 @@ footer .fmark .brand-logo{height:25px}
         </div>
       </div>
       <p class="hedge reveal in" data-en="The benefits to review efficiency and dispute rates are a working hypothesis — precisely what we hope to validate with your real data through the pilot below. Pawtient AI records and organises health data; AI content is for reference only and does not constitute a medical diagnosis or replace a veterinarian's judgment.">關於審核效率與爭議率的效益為合作假設，正是我們希望透過下方試點、用貴公司實際數據共同驗證的目標。Pawtient AI 提供健康資料的紀錄與整理，AI 內容僅供參考，不構成醫療診斷，也不取代獸醫師的判斷。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IN ACTION · POLICYHOLDER → CLAIMS  (insurer-collaboration exhibit)
+       Appended after §03 (value) as its visual proof, before §04.
+       Unnumbered exhibit — does NOT renumber the 01–08 spine.
+       Images are external in ../screenshots/ (lazy), never inlined.
+       New primitive: .screen-frame (CSS in the demo-collab block at EOF).
+       ============================================================ -->
+  <section id="inaction">
+    <div class="wrap">
+      <div class="kicker reveal in"><span class="cam"><svg><use href="#cam"></use></svg></span><span class="lbl" data-en="In Action · Policyholder → Claims">實際運作 · 保戶端 → 理賠端</span></div>
+      <h2 class="sec-h reveal d1 in" data-en="The same record, <em>from owner to examiner</em>.">同一份紀錄，從<em>保戶端</em>一路到<em>理賠端</em></h2>
+      <p class="lede reveal d2 in" data-en="Follow one illustrative chronic-kidney-disease case and watch the same structured, source-traceable timeline travel from the policyholder's phone to the examiner's desk — and become the very basis of the claim decision.">以一個慢性腎臟病的示範案例，看這條結構化、可溯源的健康時間軸——如何從保戶手機裡的紀錄，成為理賠人員核定時的同一份依據。</p>
+
+      <!-- ACT 1 — 保戶端 (reuse .phone; owner shots are 560×1257 = 1080/2424 exactly, zero crop) -->
+      <div class="demo-act reveal in">
+        <div class="demo-act-h">
+          <span class="demo-side" data-en="Policyholder · in the Pawtient app">保戶端 · 在 Pawtient App 裡</span>
+          <p class="demo-act-sub" data-en="Enrol, file a claim, follow its progress — all on the policyholder's own phone.">投保、申請理賠、追蹤進度，都在保戶自己的手機上完成。</p>
+        </div>
+        <div class="demo-phones">
+          <figure class="demo-phone reveal in">
+            <div class="phone"><div class="phone-screen"><img src="../screenshots/demo_owner_enroll.png" alt="投保畫面：小橘的投保健康基準快照——腎指標正常、無既往病史，附 426 天連續紀錄的投保前健康證明" data-en-alt="Enrolment screen: the pet's baseline snapshot — normal kidney markers, no prior history, with 426 days of continuous records as proof of prior health" loading="lazy"></div></div>
+            <figcaption class="demo-cap"><b class="ct" data-en="① Enrol · set the health baseline">① 投保 · 建立健康基準</b><span data-en="At enrolment the app captures a health baseline — normal kidney markers, no prior history, 426 days of continuous records. Later, that source-traceable baseline becomes strong supporting evidence for whether the condition was pre-existing.">投保當下就留下「健康基準」：腎指標正常、無既往病史、已連續記錄 426 天。未來理賠時，這份可溯源的健康基準，就是判斷「是不是既往症」的有力佐證。</span></figcaption>
+          </figure>
+          <figure class="demo-phone reveal d1 in">
+            <div class="phone"><div class="phone-screen"><img src="../screenshots/demo_owner_claim.png" alt="申請理賠畫面：App 自動把血檢、行為、症狀依時間排序，每筆標示來源（獸醫／裝置／飼主）" data-en-alt="Claim screen: the app auto-sorts blood tests, behaviour and symptoms by time, each tagged by source (vet / device / owner)" loading="lazy"></div></div>
+            <figcaption class="demo-cap"><b class="ct" data-en="② File a claim · the pack assembles itself">② 申請理賠 · 自動組成資料包</b><span data-en="Pick the medical event and the app sorts blood tests, behaviour, symptoms and costs by time — <b>each tagged by source</b>: 🟢 vet-original, 🔵 device-detected, 🟡 owner-entered. The onset moment is plain to see.">選定就醫事件，App 自動把血檢、行為、症狀、費用依時間排序，<b>每一筆都標上來源</b>：🟢 獸醫原始、🔵 裝置偵測、🟡 飼主填寫。發病時點，一目了然。</span></figcaption>
+          </figure>
+          <figure class="demo-phone reveal d2 in">
+            <div class="phone"><div class="phone-screen"><img src="../screenshots/demo_owner_status.png" alt="理賠進度畫面：已送出→審核中→AI 風險預審（低）→人工核定（核准）→給付 NT$18,000" data-en-alt="Claim status: submitted → review → AI pre-screen (low) → human approval → NT$18,000 paid" loading="lazy"></div></div>
+            <figcaption class="demo-cap"><b class="ct" data-en="③ Progress · AI pre-screens, a human decides">③ 進度 · AI 預審、人工核定</b><span data-en="Fully transparent: submitted → under review → <b>AI risk pre-screen (low)</b> → <b>human decision (approved)</b> → NT$18,000 paid. AI only flags risk; a person makes the call.">全程透明：已送出 → 審核中 → <b>AI 風險預審（低）</b> → <b>人工核定（核准）</b> → 給付 NT$18,000。AI 只標示風險，最終由人決定。</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE SEAM (full-width plum band — the insurer's "aha") -->
+    <div class="demo-seam reveal in">
+      <div class="wrap">
+        <span class="seam-rule" aria-hidden="true"></span>
+        <p class="seam-line" data-en="The very timeline the owner submits <em>is</em> the file the examiner opens to decide.">保戶送出的這條時間軸，<em>正是</em>理賠人員打開來判斷的同一份資料。</p>
+        <span class="seam-sub" data-en="One file · shared by both sides">同一份資料 · 兩端共用</span>
+        <span class="seam-arrow" aria-hidden="true">↓</span>
+      </div>
+    </div>
+
+    <!-- ACT 2 — 理賠端 (new .screen-frame; console shots shown whole, height:auto) -->
+    <div class="wrap">
+      <div class="demo-act act2 reveal in">
+        <div class="demo-act-h">
+          <span class="demo-side" data-en="Claims · the examiner's review console (illustrative web view)">理賠端 · 理賠審核台（網頁示意）</span>
+          <p class="demo-act-sub" data-en="Once the policyholder authorises and submits, the examiner sees the same timeline and evidence on the console.">保戶授權送出後，理賠人員在審核台上看到的，就是同一條時間軸與證據。</p>
+        </div>
+
+        <figure class="demo-screen-fig reveal in">
+          <div class="screen-frame">
+            <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="screen-glass"><img src="../screenshots/demo_console_queue.png" alt="理賠審核台待辦清單：理賠案件一覽與流程型指標，小橘案件標示由保戶 App 送出" data-en-alt="Claims console worklist: claims overview with process metrics; the case is flagged as submitted from the owner app" loading="lazy"></div>
+          </div>
+          <figcaption class="demo-cap"><b class="ct" data-en="The claims worklist">理賠待辦清單</b><span data-en="The day’s claims at a glance, with process metrics only (pending, supplements, average hours — illustrative). Chronic-disease cases are flagged “submitted from the owner app,” with Watch and timeline evidence attached.">每日理賠案件一覽，只看流程型指標（待審、補件、平均工時，皆為示意）。慢性病案件標示「由保戶 App 送出」，附 Watch 與時間軸證據。</span></figcaption>
+        </figure>
+
+        <figure class="demo-screen-fig demo-hero reveal in">
+          <div class="screen-frame">
+            <div class="screen-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="screen-glass"><img src="../screenshots/demo_console_detail.png" alt="理賠審核畫面：發病時點 × 等待期時間軸、AI 風險提示、人工核定" data-en-alt="Claim review screen: onset × waiting-period timeline, AI risk flags, and the human decision" loading="lazy"></div>
+          </div>
+          <figcaption class="demo-cap"><b class="ct" data-en="Claim review · onset × waiting period">理賠審核 · 發病時點 × 等待期</b><span data-en="The slowest step in any chronic-disease claim, settled in one view — onset falls <b>after</b> the waiting period (not pre-existing), every event is source-tagged, <b>AI flags risk but never decides</b>, and the examiner makes the final call.">一張圖說清楚慢性病理賠最花時間的那一步——發病時點落在等待期<b>之後</b>（非既往症），每個事件都標來源；<b>AI 風險提示只標記、不決定</b>，最終由理賠人員「人工核定」。</span></figcaption>
+        </figure>
+
+        <p class="demo-foot" data-en="Demonstration screens using one shared illustrative case (Xiao-Ju, a cat with chronic kidney disease). Pawtient AI records and organises health data; AI content is for reference only and does not constitute a medical diagnosis, nor replace the judgement of a veterinarian or claims examiner.">示範畫面，使用同一個範例案例（小橘 · 慢性腎臟病）。Pawtient AI 提供健康資料的紀錄與整理，AI 內容僅供參考，不構成醫療診斷，也不取代獸醫師或理賠人員的判斷。</p>
+      </div>
     </div>
   </section>
 
@@ -1495,10 +1584,12 @@ footer .fmark .brand-logo{height:25px}
         var op=clamp(1-Math.abs(p-c)/w,0,1);          // 三角形、相鄰重疊 → 不閃空白
         screens[i].style.opacity=op;
         screens[i].style.transform='scale('+(1.06-0.06*op).toFixed(4)+')';   // 輕微呼吸
-        capsEl[i].style.opacity=op;
-        var k=clamp((p-c)/w,-1.3,1.3);
-        capsEl[i].style.transform='translateY('+(-k*20).toFixed(2)+'px)';    // 時間往上流動
-        capsEl[i].style.pointerEvents= op>0.5?'auto':'none';
+        var nearest=Math.max(0,Math.min(N-1,Math.round(p/w)));
+        var capOp=(i===nearest)?1:0;                         // hard swap: exactly ONE caption at all times (zero ghosting)
+        capsEl[i].style.opacity=capOp;
+        capsEl[i].style.transform='none';                    // no translate on text -> crisp, not blurry
+        capsEl[i].style.transition='opacity .18s linear';    // tiny fade so the swap isn't jarring
+        capsEl[i].style.pointerEvents= capOp?'auto':'none';
         ticks[i].style.setProperty('--act', clamp(1-Math.abs(p-c)/(w/2),0,1).toFixed(3));
       }
       fill.style.transform='scaleY('+p.toFixed(4)+')';
@@ -1516,4 +1607,82 @@ footer .fmark .brand-logo{height:25px}
 })();
 </script>
 
+<style id="demo-collab">
+/* =========================================================================
+   Insurer-collaboration exhibit (§03→§04): owner app → claims console.
+   Appended, isolated block. Everything is scoped under #inaction so it
+   cannot affect any other section. One new primitive: .screen-frame.
+   ========================================================================= */
+#inaction .demo-act{margin-top:clamp(46px,6vw,80px)}
+#inaction .demo-act-h{margin-bottom:clamp(26px,3vw,40px)}
+#inaction .demo-side{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--rose-deep)}
+#inaction .demo-act-sub{font-size:16px;color:var(--ink-soft);line-height:1.85;margin-top:11px;max-width:54ch}
+
+/* ACT 1 — three phones; reuse the page's .phone / .phone-screen verbatim */
+#inaction .demo-phones{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,40px);align-items:start}
+#inaction .demo-phone{margin:0}#inaction .demo-phone .phone{position:relative}#inaction .demo-phone .phone-screen{position:absolute;inset:0;height:auto}#inaction .demo-phone .phone-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+@media(max-width:760px){
+  #inaction .demo-phones{grid-template-columns:1fr;gap:clamp(46px,9vw,60px);max-width:362px;margin-inline:auto}
+}
+
+/* shared caption (.ct = block title; inner <b> stays inline) */
+#inaction .demo-cap{margin-top:clamp(50px,10vw,62px);font-size:15px;color:var(--ink-soft);line-height:1.78;text-wrap:pretty}
+#inaction .demo-cap .ct{display:block;font-family:"Fraunces","Noto Serif TC",serif;font-weight:600;
+  font-size:16.5px;color:var(--ink);letter-spacing:.01em;line-height:1.4;margin-bottom:8px}
+#inaction .demo-cap span b{color:var(--ink);font-weight:700}
+
+/* THE SEAM — full-width plum band (uses existing --plum / --rose / double-rule motif) */
+#inaction .demo-seam{background:var(--plum);color:var(--cream);margin-top:clamp(58px,8vw,104px);
+  border-block:1px solid color-mix(in srgb, var(--rose) 18%, transparent)}
+#inaction .demo-seam .wrap{padding-block:clamp(42px,6vw,70px);text-align:center}
+#inaction .seam-rule{display:block;width:56px;height:0;margin:0 auto clamp(22px,3vw,30px);
+  border-top:2.5px double var(--rose);opacity:.7}
+#inaction .seam-line{font-family:"Fraunces","Noto Serif TC",serif;font-weight:500;
+  font-size:clamp(20px,2.7vw,31px);line-height:1.5;max-width:27ch;margin:0 auto;letter-spacing:.004em}
+#inaction .seam-line em{font-style:italic;color:var(--rose)}
+#inaction .seam-sub{display:inline-block;margin-top:20px;font-size:11.5px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--faint-on-plum)}
+#inaction .seam-arrow{display:block;margin-top:clamp(16px,2.4vw,24px);color:var(--rose);font-size:24px;line-height:1}
+
+/* ACT 2 — console exhibits */
+#inaction .demo-act.act2{margin-top:clamp(52px,7vw,90px)}
+#inaction .demo-screen-fig{margin:clamp(30px,4vw,52px) 0 0}
+#inaction .demo-screen-fig:first-of-type{margin-top:0}
+
+/* NEW PRIMITIVE — flat, matte browser frame (no glossy 3D mockup, no traffic-lights) */
+#inaction .screen-frame{position:relative;background:#1a1411;border-radius:14px;padding:9px;
+  box-shadow:var(--shadow);max-width:980px;margin:0 auto}
+#inaction .demo-hero .screen-frame{max-width:1080px}
+#inaction .screen-bar{display:flex;align-items:center;gap:7px;height:23px;padding:0 5px 8px}
+#inaction .screen-bar i{width:8px;height:8px;border-radius:50%;background:var(--ink-faint);opacity:.5;display:block}
+#inaction .screen-glass{border-radius:8px;overflow:hidden;background:var(--surface)}
+#inaction .screen-glass img{width:100%;height:auto;display:block}
+#inaction .demo-screen-fig .demo-cap{max-width:60ch;margin:22px auto 0;text-align:center}
+
+/* footnote — compliance line, consistent with the page's .hedge */
+#inaction .demo-foot{margin-top:clamp(40px,5vw,64px);font-size:13px;color:var(--ink-soft);
+  line-height:1.85;max-width:74ch}
+
+/* mobile: extend the dense console exhibits to the page edges for legibility (#1 risk).
+   Counter the .wrap padding instead of width:100vw — on iOS Safari a 100vw child overflows
+   the visual viewport (horizontal scroll) even with body{overflow-x:hidden}, which is what
+   forced the overflow-x:clip experiment that in turn broke the sticky scroll animation. */
+@media(max-width:600px){
+  #inaction .demo-screen-fig{margin-inline:calc(-1 * clamp(24px,5vw,60px))}
+  #inaction .demo-screen-fig .screen-frame{max-width:none;margin:0 8px;padding:6px;border-radius:11px}
+  #inaction .demo-hero .screen-frame{max-width:none}
+  #inaction .screen-bar{height:19px;padding:0 3px 6px}
+  #inaction .demo-screen-fig .demo-cap{text-align:left;max-width:none;padding-inline:clamp(20px,5.5vw,24px)}
+}
+</style>
+<style id="doss-ticklab-fix">
+/* §02「我們做什麼」scroll-timeline labels (colleague's .do-ss component): the inactive
+   beat labels rendered at .38 opacity on --ink-faint = unreadable, and the centred ticks
+   tucked their right edge under the phone. Make them readable + anchor the label to the
+   LEFT of the dot (dot stays on the axis) so it reads into the open margin, clear of the
+   phone. Append-only override, scoped under #do; desktop-only (axis is display:none ≤860px). */
+#do .do-ss-ticklab{color:var(--ink-soft);opacity:calc(.82 + .18*var(--act,0))}
+#do .do-ss-tick{transform:translate(calc(-100% + 5px),-50%);flex-direction:row-reverse}
+</style>
 </body></html>
