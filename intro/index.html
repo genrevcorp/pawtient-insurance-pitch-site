@@ -1510,7 +1510,7 @@ footer .fmark .brand-logo{height:25px}
     var sec=document.getElementById('do');
     if(!sec) return;
     if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if(window.matchMedia && matchMedia('(max-width:860px)').matches) return; // mobile/tablet: keep the static stacked .cap layout — scroll-jacked captions get cut off below the viewport on short screens
+    if(window.matchMedia && matchMedia('(hover:none) and (max-width:540px)').matches){/* 仍啟用，手機版 CSS 已處理 */}
 
     var caps=[].slice.call(sec.querySelectorAll('.cap'));
     if(caps.length<2) return;
