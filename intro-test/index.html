@@ -1492,13 +1492,21 @@ footer .fmark .brand-logo{height:25px}
 .do-ss-dot{position:absolute;left:50%;width:14px;height:14px;border-radius:50%;margin-left:-7px;margin-top:-7px;
   background:var(--rose-ink,#8C3E66);box-shadow:0 0 0 4px rgba(212,127,166,.18);}
 @media(max-width:860px){
-  .do-ss-inner{grid-template-columns:1fr;gap:0;}
+  .do-ss-inner{grid-template-columns:1fr;gap:0;height:100svh;position:relative;}
   .do-ss-axis{display:none;}
-  .do-ss-pcol{align-items:flex-start;padding-top:7svh;}
+  /* phone — SAME size, moved up to just below the header (was vertically centred ~190px down) */
+  .do-ss-pcol{position:absolute;top:0;left:0;right:0;height:auto;padding-top:max(68px,8svh);
+    display:flex;justify-content:center;align-items:flex-start;}
   .do-ss-phone{height:min(62svh,580px);}
-  .do-ss-ccol{position:absolute;left:0;right:0;bottom:6%;min-height:0;padding:0 7vw;z-index:3;}
-  .do-ss-cap{position:absolute;left:7vw;right:7vw;inset:auto;}
-  .do-ss-cap .cap-copy p{max-width:none;}
+  /* caption — moved up to sit directly under the phone (was anchored near the bottom) */
+  .do-ss-ccol{position:absolute;left:0;right:0;bottom:auto;min-height:0;padding:0 7vw;z-index:3;
+    top:calc(max(68px,8svh) + min(62svh,580px) + 14px);}
+  .do-ss-cap{position:absolute;top:0;left:7vw;right:7vw;bottom:auto;inset:auto;justify-content:flex-start;}
+  /* smaller caption type on mobile so every beat's full text fits under the (full-size) phone */
+  .do-ss-cap .cap-copy .tag{font-size:11px;letter-spacing:.16em;margin-bottom:8px;}
+  .do-ss-cap .cap-copy h3{font-size:18px;line-height:1.3;}
+  .do-ss-cap .cap-copy p{font-size:12.5px;line-height:1.5;margin-top:9px;max-width:none;}
+  .do-ss-cap .cap-copy .micro{font-size:10.5px;margin-top:9px;}
 }
 </style>
 <script>
