@@ -1584,10 +1584,12 @@ footer .fmark .brand-logo{height:25px}
         var op=clamp(1-Math.abs(p-c)/w,0,1);          // 三角形、相鄰重疊 → 不閃空白
         screens[i].style.opacity=op;
         screens[i].style.transform='scale('+(1.06-0.06*op).toFixed(4)+')';   // 輕微呼吸
-        var capOp=clamp(1-(Math.abs(p-c)/w-0.42)/0.16,0,1);  // sharp crossfade: one caption crisp at a time (no ghosting)
+        var nearest=Math.max(0,Math.min(N-1,Math.round(p/w)));
+        var capOp=(i===nearest)?1:0;                         // hard swap: exactly ONE caption at all times (zero ghosting)
         capsEl[i].style.opacity=capOp;
         capsEl[i].style.transform='none';                    // no translate on text -> crisp, not blurry
-        capsEl[i].style.pointerEvents= capOp>0.5?'auto':'none';
+        capsEl[i].style.transition='opacity .18s linear';    // tiny fade so the swap isn't jarring
+        capsEl[i].style.pointerEvents= capOp?'auto':'none';
         ticks[i].style.setProperty('--act', clamp(1-Math.abs(p-c)/(w/2),0,1).toFixed(3));
       }
       fill.style.transform='scaleY('+p.toFixed(4)+')';
