@@ -1621,7 +1621,7 @@ footer .fmark .brand-logo{height:25px}
 
 /* ACT 1 — three phones; reuse the page's .phone / .phone-screen verbatim */
 #inaction .demo-phones{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,40px);align-items:start}
-#inaction .demo-phone{margin:0}#inaction .demo-phone .phone{position:relative}#inaction .demo-phone .phone-screen{position:absolute;inset:0;height:auto}#inaction .demo-phone .phone-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+#inaction .demo-phone{margin:0}#inaction .demo-phone .phone{position:relative;height:auto;aspect-ratio:auto}#inaction .demo-phone .phone-screen{position:static;height:auto;overflow:hidden;background:transparent}#inaction .demo-phone .phone-screen img{position:static;display:block;width:100%;height:auto;object-fit:fill}
 @media(max-width:760px){
   #inaction .demo-phones{grid-template-columns:1fr;gap:clamp(46px,9vw,60px);max-width:362px;margin-inline:auto}
 }
